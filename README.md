@@ -2,6 +2,9 @@
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
+## SKRIV DETTE OM
+### Lav gerne med docker også
+
 ## Available Scripts
 
 In the project directory, you can run:
