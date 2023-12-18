@@ -31,7 +31,7 @@ const WeatherComponent = () => {
         <Grid >
             {weatherData && (
                 <Grid className="weather-container">
-                    <Grid className="current-waether">
+                    <Grid className="current-weather">
                         <h2>Current Weather</h2>
                         <p> {weatherData.location.name}, {weatherData.location.country}</p>
                         <p> {weatherData.current.temp_c}°C</p>
