@@ -27,7 +27,7 @@ const WeatherComponent = () => {
     }, [lat, lon, key, days]);
 
     return (
-        <Grid className={'weather-container'}>
+        <div className={'weather-container'}>
             <h1>WeatherComponent</h1>
             {weatherData && (
                 <div>
@@ -47,7 +47,7 @@ const WeatherComponent = () => {
                     ))}
                 </div>
             )}
-        </Grid>
+        </div>
     );
 };
 
