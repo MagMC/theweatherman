@@ -6,7 +6,6 @@ import  WeatherComponent  from "./WeatherComponent";
 export const Frontpage = () => {
   return (
     <div>
-      <h1>The Weatherman</h1>
         <WeatherComponent />
     </div>
   );

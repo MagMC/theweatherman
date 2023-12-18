@@ -3,3 +3,15 @@
 .WeatherComponent {
     text-align: center;
 }
+
+.weather-container {
+    width: 90%;
+    max-width: 1300px;
+    margin: 40px auto;
+
+    padding: 20px; /* Add padding for content */
+    border-radius: 15px; /* Make the corners rounded */
+    background-color: #e9c429; /* Set background color */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Add a subtle shadow */
+    text-align: center; /* Center the content horizontally */
+}
