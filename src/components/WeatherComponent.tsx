@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import axios from "axios";
 import {WeatherData} from "./IWeatherData";
 import './WeatherComponent.css';
+import { Grid } from "@mui/material";
 
 const WeatherComponent = () => {
     const [weatherData, setWeatherData] = useState<WeatherData | null>(null);
@@ -27,7 +28,7 @@ const WeatherComponent = () => {
     }, [lat, lon, key, days]);
 
     return (
-        <div className={'weather-container'}>
+        <Grid className={'weather-container'}>
             <h1>WeatherComponent</h1>
             {weatherData && (
                 <div>
@@ -47,7 +48,7 @@ const WeatherComponent = () => {
                     ))}
                 </div>
             )}
-        </div>
+        </Grid>
     );
 };
 
