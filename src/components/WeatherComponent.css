@@ -5,13 +5,39 @@
 }
 
 .weather-container {
+    display: flex;
+    flex-direction: row;
     width: 90%;
     max-width: 1300px;
     margin: 40px auto;
+    justify-content: space-between;
+    padding: 20px;
+    border-radius: 15px;
+    background-color: #e9c429;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
 
-    padding: 20px; /* Add padding for content */
-    border-radius: 15px; /* Make the corners rounded */
-    background-color: #e9c429; /* Set background color */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Add a subtle shadow */
-    text-align: center; /* Center the content horizontally */
+.current-weather {
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+
+    background-color: #54416d;
+    padding: 20px;
+    border-radius: 15px;
+}
+
+.forecast-weather {
+    display: flex;
+    flex: 1;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+
+    background-color: #54416d;
+    padding: 10px;
+    border-radius: 15px;
 }

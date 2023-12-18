@@ -28,28 +28,54 @@ const WeatherComponent = () => {
     }, [lat, lon, key, days]);
 
     return (
-        <Grid className={'weather-container'}>
-            <h1>WeatherComponent</h1>
+        <Grid >
             {weatherData && (
-                <div>
-                    <h2>Current Weather</h2>
-                    <p>Location: {weatherData.location.name}, {weatherData.location.country}</p>
-                    <p>Temperature: {weatherData.current.temp_c}°C</p>
-                    <p>Condition: {weatherData.current.condition.text}</p>
+                <Grid className="weather-container">
+                    <Grid className="current-waether">
+                        <h2>Current Weather</h2>
+                        <p> {weatherData.location.name}, {weatherData.location.country}</p>
+                        <p> {weatherData.current.temp_c}°C</p>
+                        <p> {weatherData.current.condition.text}</p>
+                        <img src={weatherData.current.condition.icon} alt={weatherData.current.condition.text} />
 
-                    <h2>7-Day Weather Forecast</h2>
-                    {weatherData.forecast.forecastday.map(day => (
-                        <div key={day.date}>
-                            <h3>{day.date}</h3>
-                            <p>Max Temp: {day.day.maxtemp_c}°C</p>
-                            <p>Min Temp: {day.day.mintemp_c}°C</p>
-                            <p>Condition: {day.day.condition.text}</p>
-                        </div>
-                    ))}
-                </div>
+                    </Grid>
+                    <Grid className="forecast-weather">
+                        <h2>7-Day Weather Forecast</h2>
+                        {weatherData.forecast.forecastday.map(day => (
+                            <div key={day.date}>
+                                <h3>{epochToDay(day.date_epoch)}</h3>
+                                <p>{day.day.maxtemp_c}°C</p>
+                                <p>{day.day.condition.text}</p>
+                                <img src={day.day.condition.icon} alt={day.day.condition.text} />
+                            </div>
+                        ))}
+                    </Grid>
+                </Grid>
             )}
         </Grid>
     );
 };
+
+//epoch to date day conversion - function
+function epochToDay(epoch: number) {
+    //if epoch is today, return 'Today'
+    if (new Date(epoch * 1000).toDateString() === new Date().toDateString()) {
+        return "Today";
+    }
+    //if epoch is tomorrow, return 'Tomorrow'
+    else if (
+        new Date(epoch * 1000).toDateString() ===
+        new Date(new Date().setDate(new Date().getDate() + 1)).toDateString()
+    ) {
+        return "Tomorrow";
+    }
+    //else return day of the week
+    else {
+        return new Date(epoch * 1000).toLocaleDateString("en-US", {
+            weekday: "long",
+        });
+    }
+}
+
 
 export default WeatherComponent;
