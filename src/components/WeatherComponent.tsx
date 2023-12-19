@@ -5,9 +5,11 @@ import './WeatherComponent.css';
 import { Grid } from "@mui/material";
 
 const WeatherComponent = () => {
+
+
     const [weatherData, setWeatherData] = useState<WeatherData | null>(null);
 
-    //OBS: MANGLER!!!!
+    //OBS: Ville gerne have gjort dette, dog var der ikke tid nok
     //useState to set background image based on if weather condition includes 'rain', 'cloud', 'sunny' or 'clear'
     const [backgroundImage, setBackgroundImage] = useState<string>('');
 
