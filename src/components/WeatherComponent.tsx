@@ -43,6 +43,7 @@ const WeatherComponent = () => {
                         <img src={weatherData.current.condition.icon} alt={weatherData.current.condition.text} />
                         <h3>Wind</h3>
                         <p> {weatherData.current.wind_kph} KPH</p>
+                        <p> {weatherData.current.wind_dir}</p>
                     </Grid>
                     <Grid className="forecast-weather">
                         <Grid item >
