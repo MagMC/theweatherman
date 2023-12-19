@@ -43,15 +43,19 @@ const WeatherComponent = () => {
                         <img src={weatherData.current.condition.icon} alt={weatherData.current.condition.text} />
                     </Grid>
                     <Grid className="forecast-weather">
-                        <h2>7-Day Weather Forecast</h2>
-                        {weatherData.forecast.forecastday.map(day => (
-                            <Grid key={day.date}>
-                                <h3>{epochToDay(day.date_epoch)}</h3>
-                                <p>{day.day.maxtemp_c}°C</p>
-                                <p>{day.day.condition.text}</p>
-                                <img src={day.day.condition.icon} alt={day.day.condition.text} />
-                            </Grid>
-                        ))}
+                        <Grid item >
+                            <h2>7-Day Weather Forecast</h2>
+                        </Grid>
+                        <Grid item className="forecast-items">
+                            {weatherData.forecast.forecastday.map(day => (
+                                <Grid key={day.date}>
+                                    <h3>{epochToDay(day.date_epoch)}</h3>
+                                    <p>{day.day.maxtemp_c}°C</p>
+                                    <p>{day.day.condition.text}</p>
+                                    <img src={day.day.condition.icon} alt={day.day.condition.text} />
+                                </Grid>
+                            ))}
+                        </Grid>
                     </Grid>
                 </Grid>
             )}
