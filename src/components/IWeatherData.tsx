@@ -9,6 +9,8 @@ export interface WeatherData {
             text: string;
             icon: string;
         };
+        wind_kph: number;
+        wind_dir: string;
     };
     forecast: {
         forecastday: {
