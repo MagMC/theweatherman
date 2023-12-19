@@ -5,14 +5,12 @@ import './WeatherComponent.css';
 import { Grid } from "@mui/material";
 
 const WeatherComponent = () => {
-
-
-    const [weatherData, setWeatherData] = useState<WeatherData | null>(null);
-
     //OBS: Ville gerne have gjort dette, dog var der ikke tid nok
     //useState to set background image based on if weather condition includes 'rain', 'cloud', 'sunny' or 'clear'
     const [backgroundImage, setBackgroundImage] = useState<string>('');
 
+    //OBS! Could use some refactoring
+    const [weatherData, setWeatherData] = useState<WeatherData | null>(null);
     const lat = 56.1518;
     const lon = 10.2064;
     //Key should not have been hardcoded IRL

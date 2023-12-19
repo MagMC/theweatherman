@@ -44,13 +44,13 @@ body {
     flex-wrap: nowrap;
 }
 
+/* Responsive */
 @media (max-width: 850px) {
     .forecast-items {
         flex-wrap: wrap;
         justify-content: center;
         align-items: flex-start;
     }
-    /* Hide the last 3 items */
     .forecast-items div:nth-last-child(-n+3) {
         display: none;
     }
