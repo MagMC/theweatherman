@@ -25,7 +25,7 @@ See the section about [deployment](https://facebook.github.io/create-react-app/d
 ### `npm test`
 Ville gerne have lavet tests også. Nåede det ikke
 
-## Docker!
+## Docker Instructions (Optional)
 
 Make sure you have Docker installed. Navigate to the project directory containing the Dockerfile in a terminal.
 
