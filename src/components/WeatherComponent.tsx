@@ -66,6 +66,8 @@ const WeatherComponent = () => {
     );
 };
 
+
+//OBS! Again refactoring could be done here
 //epoch to date day conversion but only the 3 first letters - function
 function epochToDay(epoch: number) {
     //if epoch is today, return 'Today'
