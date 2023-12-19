@@ -32,11 +32,11 @@ Make sure you have Docker installed. Navigate to the project directory containin
 Run the following command to build the Docker image:
 
 ```bash
-docker build -t my-react-app .
+docker build -t weather-app .
 ```
 
 Run the Docker container with the following command:
 
 ```bash
-docker run -p 3000:3000 my-react-app
+docker run -p 3000:3000 weather-app
 ```
