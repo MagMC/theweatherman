@@ -1,11 +1,6 @@
-# Getting Started with Create React App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-## SKRIV DETTE OM
-### Lav gerne med docker også
-
-## Available Scripts
+## Weather App
 
 In the project directory, you can run:
 
@@ -17,9 +12,6 @@ Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 The page will reload if you make edits.\
 You will also see any lint errors in the console.
 
-### `npm test`
-Ville gerne have lavet tests også. Nåede det ikke
-
 ### `npm run build`
 
 Builds the app for production to the `build` folder.\
@@ -30,3 +22,21 @@ Your app is ready to be deployed!
 
 See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
 
+### `npm test`
+Ville gerne have lavet tests også. Nåede det ikke
+
+## Docker!
+
+Make sure you have Docker installed. Navigate to the project directory containing the Dockerfile in a terminal.
+
+Run the following command to build the Docker image:
+
+```bash
+docker build -t my-react-app .
+```
+
+Run the Docker container with the following command:
+
+```bash
+docker run -p 3000:3000 my-react-app
+```
