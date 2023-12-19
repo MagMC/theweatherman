@@ -9,7 +9,7 @@ body {
     width: 90%;
     height: 80vh;
     max-width: 1300px;
-    min-width: 300px;
+    min-width: 30em;
     margin: 40px auto;
     padding: 20px;
     border-radius: 15px;
