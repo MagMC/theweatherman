@@ -7,9 +7,13 @@ import { Grid } from "@mui/material";
 const WeatherComponent = () => {
     const [weatherData, setWeatherData] = useState<WeatherData | null>(null);
 
+    //OBS: MANGLER!!!!
+    //useState to set background image based on if weather condition includes 'rain', 'cloud', 'sunny' or 'clear'
+    const [backgroundImage, setBackgroundImage] = useState<string>('');
+
     const lat = 56.1518;
     const lon = 10.2064;
-    //Key skulle nok ikke være hardcoded IRL
+    //Key should not have been hardcoded IRL
     const key = 'ea801724f03c4bc6aea144730231812';
     const days = 7;
 
@@ -37,17 +41,16 @@ const WeatherComponent = () => {
                         <p> {weatherData.current.temp_c}°C</p>
                         <p> {weatherData.current.condition.text}</p>
                         <img src={weatherData.current.condition.icon} alt={weatherData.current.condition.text} />
-
                     </Grid>
                     <Grid className="forecast-weather">
                         <h2>7-Day Weather Forecast</h2>
                         {weatherData.forecast.forecastday.map(day => (
-                            <div key={day.date}>
+                            <Grid key={day.date}>
                                 <h3>{epochToDay(day.date_epoch)}</h3>
                                 <p>{day.day.maxtemp_c}°C</p>
                                 <p>{day.day.condition.text}</p>
                                 <img src={day.day.condition.icon} alt={day.day.condition.text} />
-                            </div>
+                            </Grid>
                         ))}
                     </Grid>
                 </Grid>
@@ -56,25 +59,14 @@ const WeatherComponent = () => {
     );
 };
 
-//epoch to date day conversion - function
+//epoch to date day conversion but only the 3 first letters - function
 function epochToDay(epoch: number) {
     //if epoch is today, return 'Today'
     if (new Date(epoch * 1000).toDateString() === new Date().toDateString()) {
         return "Today";
     }
-    //if epoch is tomorrow, return 'Tomorrow'
-    else if (
-        new Date(epoch * 1000).toDateString() ===
-        new Date(new Date().setDate(new Date().getDate() + 1)).toDateString()
-    ) {
-        return "Tomorrow";
-    }
-    //else return day of the week
-    else {
-        return new Date(epoch * 1000).toLocaleDateString("en-US", {
-            weekday: "long",
-        });
-    }
+    //else return day of the week but only the 3 first letters
+    return new Date(epoch * 1000).toDateString().slice(0, 3);
 }
 
 

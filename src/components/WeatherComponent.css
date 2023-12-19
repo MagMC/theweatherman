@@ -1,43 +1,36 @@
 /* WeatherComponent.css */
 
-.WeatherComponent {
-    text-align: center;
+body {
+    color: white;
 }
-
 .weather-container {
     display: flex;
-    flex-direction: row;
     width: 90%;
+    height: 80vh;
     max-width: 1300px;
     margin: 40px auto;
-    justify-content: space-between;
     padding: 20px;
     border-radius: 15px;
-    background-color: #e9c429;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    background-color: rgba(0, 0, 0, 0.5);
     text-align: center;
+    gap: 2%;
 }
 
 .current-weather {
-    display: flex;
-    flex: 1;
-    flex-direction: column;
-    justify-content: space-between;
     align-items: center;
-
-    background-color: #54416d;
-    padding: 20px;
+    background-color: rgba(0, 0, 0, 0.5);
+    padding: 5px;
+    height: 100%;
     border-radius: 15px;
 }
 
 .forecast-weather {
     display: flex;
-    flex: 1;
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
 
-    background-color: #54416d;
-    padding: 10px;
+    background-color:rgba(0, 0, 0, 0.5);
+    padding: 5px;
     border-radius: 15px;
 }
